@@ -59,6 +59,7 @@ button {
   font-weight: 700;
   height: 100%;
   letter-spacing: 1px;
+  outline: none;
   text-transform: uppercase;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
