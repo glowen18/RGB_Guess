@@ -7,6 +7,8 @@ var pickedColor = pickColor();
 var colorDisplay = document.getElementById("colorDisplay");
 //Sets message Display
 var messageDisplay = document.querySelector("#message")
+//Set h1 so the background color change to correct color picked
+var h1 = document.querySelector("h1");
 
 //Displays color that is picked
 colorDisplay.textContent = pickedColor;
@@ -15,7 +17,6 @@ colorDisplay.textContent = pickedColor;
 for(var i = 0; i < squares.length; i++) {
 //Adds initial color to squares
   squares[i].style.background = colors[i];
-
 //Adds click listener to squares
   squares[i].addEventListener("click", function() {
 //Grab color of clicked squares
@@ -24,6 +25,7 @@ for(var i = 0; i < squares.length; i++) {
     if(clickedColor === pickedColor) {
       messageDisplay.textContent = "Correct";
       changeColors(clickedColor);
+      h1.style.background = clickedColor;
     } else {
 // When wrong square clicked, it disappears (fades to background color)
       this.style.background = "#233343";
