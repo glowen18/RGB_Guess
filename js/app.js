@@ -8,30 +8,32 @@ var colors =  [
 ]
 // Select all squares
 var squares = document.querySelectorAll(".square");
-
 //Hard codes picked color
 var pickedColor = colors[3];
-
 //Sets variable to pick a color by its ID
 var colorDisplay = document.getElementById("colorDisplay");
+//Sets message Display
+var messageDisplay = document.querySelector("#message")
 
 //Displays color that is picked
 colorDisplay.textContent = pickedColor;
 
 //Loop thru all squares
 for(var i = 0; i < squares.length; i++) {
-  //Adds initial color to squares
+//Adds initial color to squares
   squares[i].style.background = colors[i];
 
-  //Adds click listener to squares
+//Adds click listener to squares
   squares[i].addEventListener("click", function() {
-    //Grab color of clicked squares
+//Grab color of clicked squares
     var clickedColor = this.style.background;
-    //And compare color to pickedColor
+//And compare color to pickedColor
     if(clickedColor === pickedColor) {
-      alert("Correct!");
+      messageDisplay.textContent = "Correct"
     } else {
+// When wrong square clicked, it disappears (fades to background color)
       this.style.background = "#233343";
+      messageDisplay.textContent = "Try Again"
     }
   });
 }
