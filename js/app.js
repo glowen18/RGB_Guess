@@ -9,7 +9,7 @@ var colors =  [
 // Select all squares
 var squares = document.querySelectorAll(".square");
 //Hard codes picked color
-var pickedColor = colors[3];
+var pickedColor = pickColor();
 //Sets variable to pick a color by its ID
 var colorDisplay = document.getElementById("colorDisplay");
 //Sets message Display
@@ -44,6 +44,11 @@ function changeColors(color) {
   for(var i = 0; i < squares.length; i++) {
 //Change each color to match pickedColor
   squares[i].style.background = color;
-
   }
+}
+
+function pickColor() {
+//Picks random number from remaining number of squares
+  var random = Math.floor(Math.random() * colors.length);
+  return colors[random];
 }
